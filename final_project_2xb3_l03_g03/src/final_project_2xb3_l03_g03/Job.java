@@ -7,15 +7,15 @@ public class Job// DataType for a job title
 	private int outlook;// 0=Undetermined 1=Limited 2=Fair 3=Good
 	private int year;// 20xx
 	private String location;
-
-	public Job (int[] noc, String title, int outlook, int year, String location)
+	private int region;
+	public Job (int[] noc, String title, int outlook, int year, String location, int region)
 	{
 		this.noc = noc;
 		this.title = title;
 		this.outlook = outlook;
 		this.year = year;
 		this.location = location;
-		
+		this.region = region;
 	}
 	
 	public int get_noc(int index)
@@ -31,7 +31,10 @@ public class Job// DataType for a job title
 	{
 		return location;
 	}
-	
+	public int get_region()
+	{
+		return region;
+	}
 	public int get_outlook()
 	{
 		return outlook+10-10;
@@ -41,5 +44,16 @@ public class Job// DataType for a job title
 		return year+1-1;
 	}
 	
+	public void printInfo() 
+	{
+		System.out.println("Job title: "+this.get_title());
+		System.out.println("Noc _ "+this.get_noc(0)+" "+ this.get_noc(1)+" "+this.get_noc(2)+" "+this.get_noc(3));
+		System.out.println("Outlook: "+this.get_outlook());
+		System.out.println("Province: "+this.get_location());
+		System.out.println("Econ region code: "+this.get_region());
+
+		System.out.println("Year "+this.get_year()+"\n");
+		
+	}
 	
-}
+}//end
