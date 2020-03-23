@@ -1,12 +1,14 @@
 package final_project_2xb3_l03_g03;
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import final_project_2xb3_l03_g03.Sorting;
+import final_project_2xb3_l03_g03.Comparable;
 
-
-public class Demo{
+public class Demo extends Sorting{
 	public static String[][] CSVReader(String filepath) {
 
 	     String csvFile = filepath;
@@ -133,8 +135,28 @@ public class Demo{
     		locations.add(location);
     	}
         //////////////////////////////////////////////////////
-        //sort the arraylist of region, and the regions alphabetically
-    	
+        //sort the arraylist of region, and the regions alphabetically --- Senni Tan
+    	ArrayList<Job> jobsInString = new ArrayList<Job>();
+    	ArrayList<Job> jobsInOutlook = new ArrayList<Job>();
+    	ArrayList<String> locationInString = new ArrayList<String>();
+    	Job[] tmp = new Job[jobs.size()];
+    	String[] Locations = new String[jobs.size()];
+    	for (int i = 0; i < len; i++) {
+    		Job job = jobs.get(i);
+    		String location = locations.get(i);
+    		tmp[i] = job;
+    		Locations[i] = location;
+    	}
+    	sortString(tmp);
+    	for (int i = 0; i < len; i++)
+    		jobsInString.add(tmp[i]);
+    	sortOutlook(tmp);
+    	for (int i = 0; i < len; i++)
+    		jobsInOutlook.add(tmp[i]);
+    	sortLocation(Locations);
+    	for (int i = 0; i < len; i++)
+    		locationInString.add(Locations[i]);
+    			
         //////////////////////////////////////////////////////
         //show the options of catagories, regions
         //get the user information
