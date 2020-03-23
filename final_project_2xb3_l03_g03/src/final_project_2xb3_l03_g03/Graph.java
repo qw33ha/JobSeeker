@@ -1,5 +1,3 @@
-package final_project_2xb3_l03_g03;
-
 
 import java.util.ArrayList;
 public class Graph {
@@ -21,12 +19,18 @@ public class Graph {
 	public int V() {
 		return this.V;
 	}
-	public Iterable adj(int v) {
+	public ArrayList<Integer> adj(int v) {
 		return adj[v];
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		Graph G = new Graph(4);
+		G.addedge(0,1);
+		G.addedge(0,2);
+		G.addedge(1,2);
+		System.out.println(G.adj(2));
+		DFS d = new DFS(G,1);
+		System.out.println(d.count());
 	}
 
 }
