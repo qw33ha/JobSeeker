@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 
-public class Demo{
+public class Demo extends Sorting{
 	public static void main(String[] args) throws FileNotFoundException, IOException{
 		ArrayList<Job> joblist = new ArrayList<Job>();
 		DataProcess data = new DataProcess();
@@ -17,7 +17,34 @@ public class Demo{
 		}
        //////////////////////////////////////////////////////
         //sort the arraylist of region, and the regions alphabetically
+		ArrayList<String> locations = new ArrayList<String>();
+		int len = joblist.size();
+		for (int i = 0; i < len; i++) {
+			Job job = joblist.get(i);
+			locations.add(job.get_location());
+		}
+		ArrayList<Job> jobsInString = new ArrayList<Job>();
+    	ArrayList<Job> jobsInOutlook = new ArrayList<Job>();
+    	ArrayList<String> locationInString = new ArrayList<String>();
+    	Job[] tmp = new Job[joblist.size()];
+    	String[] Locations = new String[joblist.size()];
     	
+    	for (int i = 0; i < len; i++) {
+    		Job job = joblist.get(i);
+    		String location = locations.get(i);
+    		tmp[i] = job;
+    		Locations[i] = location;
+    	}
+    	sortString(tmp);
+    	for (int i = 0; i < len; i++)
+    		jobsInString.add(tmp[i]);
+    	sortOutlook(tmp);
+    	for (int i = 0; i < len; i++)
+    		jobsInOutlook.add(tmp[i]);
+    	sortLocation(Locations);
+    	for (int i = 0; i < len; i++)
+    		locationInString.add(Locations[i]);
+
         //////////////////////////////////////////////////////
         //show the options of catagories, regions
         //get the user information

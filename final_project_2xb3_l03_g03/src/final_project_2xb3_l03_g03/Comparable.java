@@ -9,8 +9,8 @@ public class Comparable {
 	}
 	
 	public static int CompareOutlook(Job a, Job b) {
-		int a1 = a.get_potential();
-		int b1 = b.get_potential();
+		int a1 = a.get_outlook();
+		int b1 = b.get_outlook();
 		if (a1 > b1)
 			return 1;
 		if (a1 < b1)
