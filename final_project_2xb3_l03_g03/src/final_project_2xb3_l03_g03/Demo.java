@@ -47,6 +47,7 @@ public class Demo extends Sorting{
 
         //////////////////////////////////////////////////////
         //show the options of catagories, regions
+    	
         //get the user information
         //select the given region and catagory, and have a newarraylist
         /////////////////////////////////////////////////////

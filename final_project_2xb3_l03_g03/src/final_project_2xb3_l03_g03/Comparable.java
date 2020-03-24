@@ -17,4 +17,20 @@ public class Comparable {
 			return -1;
 		return 0;
 	}
+	
+	public static int CompareNOC(Job a, Job b) {
+		int NOCa = a.get_noc(0);
+		int NOCb = b.get_noc(0);
+		if (NOCa < NOCb)
+			return -1;
+		if (NOCa > NOCb)
+			return 1;
+		return 0;
+	}
+	
+	public static int CompareRegionS(Job a, Job b) {
+		String Ra = a.get_regions();
+		String Rb = b.get_regions();
+		return Ra.compareTo(Rb);
+	}
 }
