@@ -1,6 +1,7 @@
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 
 public class Demo extends Sorting{
@@ -16,34 +17,12 @@ public class Demo extends Sorting{
 			code2string[j.get_region()] = j.get_regions();
 		}
        //////////////////////////////////////////////////////
-        //sort the arraylist of region, and the regions alphabetically
-		ArrayList<String> locations = new ArrayList<String>();
-		int len = joblist.size();
-		for (int i = 0; i < len; i++) {
-			Job job = joblist.get(i);
-			locations.add(job.get_location());
-		}
-		ArrayList<Job> jobsInString = new ArrayList<Job>();
-    	ArrayList<Job> jobsInOutlook = new ArrayList<Job>();
-    	ArrayList<String> locationInString = new ArrayList<String>();
-    	Job[] tmp = new Job[joblist.size()];
-    	String[] Locations = new String[joblist.size()];
-    	
-    	for (int i = 0; i < len; i++) {
-    		Job job = joblist.get(i);
-    		String location = locations.get(i);
-    		tmp[i] = job;
-    		Locations[i] = location;
-    	}
-    	sortString(tmp);
-    	for (int i = 0; i < len; i++)
-    		jobsInString.add(tmp[i]);
-    	sortOutlook(tmp);
-    	for (int i = 0; i < len; i++)
-    		jobsInOutlook.add(tmp[i]);
-    	sortLocation(Locations);
-    	for (int i = 0; i < len; i++)
-    		locationInString.add(Locations[i]);
+        //sort the arraylist of jobs(joblist) with respect to region name string(regions) alphabetically
+		Job[] temp = joblist.toArray(new Job[joblist.size()]);
+    	sortRegions(temp);
+    	ArrayList<Job> sortedjoblist1 = new ArrayList<Job>(Arrays.asList(temp));
+    	//sorted jobs are stored in sortedjoblist1
+
 
         //////////////////////////////////////////////////////
         //show the options of catagories, regions
