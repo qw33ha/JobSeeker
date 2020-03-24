@@ -1,5 +1,3 @@
-package final_project_2xb3_l03_g03;
-
 public class Job// DataType for a job title
 {
 	private int[] noc;// Four digit code by array
@@ -8,8 +6,9 @@ public class Job// DataType for a job title
 	private int year;// 20xx
 	private String location;
 	private int region;
+	private String regions;
 	
-	public Job (int[] noc, String title, int outlook, int year, String location, int region)
+	public Job (int[] noc, String title, int outlook, int year, String location, int region, String regions)
 	{
 		this.noc = noc;
 		this.title = title;
@@ -17,6 +16,7 @@ public class Job// DataType for a job title
 		this.year = year;
 		this.location = location;
 		this.region = region;
+		this.regions = regions;
 	}
 	
 	public int get_noc(int index)
@@ -44,6 +44,9 @@ public class Job// DataType for a job title
 	{
 		return year+1-1;
 	}
+	public String get_regions() {
+		return regions;
+	}
 	
 	public void printInfo() 
 	{
@@ -52,6 +55,7 @@ public class Job// DataType for a job title
 		System.out.println("Outlook: "+this.get_outlook());
 		System.out.println("Province: "+this.get_location());
 		System.out.println("Econ region code: "+this.get_region());
+		System.out.println("Econ region name: "+this.get_regions());
 
 		System.out.println("Year "+this.get_year()+"\n");
 		

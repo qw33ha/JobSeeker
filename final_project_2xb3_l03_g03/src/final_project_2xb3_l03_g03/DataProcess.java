@@ -1,10 +1,7 @@
-package final_project_2xb3_l03_g03;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class DataProcess {
@@ -73,7 +70,7 @@ public class DataProcess {
 
 			String yearstring = linecontent[4].substring(6);
 			int year = Integer.parseInt(yearstring);
-		Job j = new Job(noc, linecontent[1].replaceAll("\"", ""), outlook, year, linecontent[5],Integer.parseInt(linecontent[6]));
+			Job j = new Job(noc, linecontent[1].replaceAll("\"", ""), outlook, year, linecontent[5],Integer.parseInt(linecontent[6]),linecontent[7]);
 		dataset.add(j);
 		
 
@@ -86,6 +83,7 @@ public class DataProcess {
 		 * linecontent[2] = Undetermined / Limited / Fair / Good   (outlook) 
 		 * linecontent[4] = 21/12/2016  (Covered by filename,no need to read from line)
 		 * linecontent[5] = NL  
+		 * linecontent[7] = Econ region name
 		 * **/
 
 
