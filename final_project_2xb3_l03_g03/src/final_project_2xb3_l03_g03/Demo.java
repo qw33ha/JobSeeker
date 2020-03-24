@@ -19,7 +19,7 @@ public class Demo extends Sorting{
        //////////////////////////////////////////////////////
         //sort the arraylist of jobs(joblist) with respect to region name string(regions) alphabetically
 		Job[] temp = joblist.toArray(new Job[joblist.size()]);
-    	sortRegions(temp);
+    	sortRegionS(temp);
     	ArrayList<Job> sortedjoblist1 = new ArrayList<Job>(Arrays.asList(temp));
     	//sorted jobs are stored in sortedjoblist1
 
