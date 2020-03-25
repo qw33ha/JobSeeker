@@ -1,14 +1,13 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.UnsupportedEncodingException;
+import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class DataProcess {
 //	public Job[] dataset;
     public ArrayList<Job> dataset = new ArrayList<Job>();
 
-	public DataProcess()throws FileNotFoundException, UnsupportedEncodingException{
+	public DataProcess()throws IOException{
 	
 	//when initialized, read csv and store
 		//loop years
@@ -35,12 +34,11 @@ public class DataProcess {
 		
 		
 		 
-		Scanner scan = new Scanner(input);
-		String line = scan.nextLine();//Skip line1
-
-		while(scan.hasNext()) {
+		BufferedReader br = null;
+        br = new BufferedReader(new FileReader(input));
+        String line = br.readLine();
+		while((line = br.readLine()) != null) {
 		//To loop,readline - split - create Jobobject - append to dataset[]
-		line = scan.nextLine();
 		String[] linecontent = line.split(",");
 		int[] noc= {(int)linecontent[0].charAt(4)-48,(int)linecontent[0].charAt(5)-48,(int)linecontent[0].charAt(6)-48,(int)linecontent[0].charAt(7)-48};
 		
@@ -70,20 +68,14 @@ public class DataProcess {
 
 			String yearstring = linecontent[4].substring(6);
 			int year = Integer.parseInt(yearstring);
-			Job j = new Job(noc, linecontent[1].replaceAll("\"", ""), outlook, year, linecontent[5],Integer.parseInt(linecontent[6]),linecontent[7]);
+		Job j = new Job(noc, linecontent[1].replaceAll("\"", ""), outlook, year, linecontent[5],Integer.parseInt(linecontent[6]),linecontent[7]);
 		dataset.add(j);
-		
-
-
-
-
 		/**
 		 * linecontent[0] = NOC_0123
 		 * linecontent[1] = someJobtitle
 		 * linecontent[2] = Undetermined / Limited / Fair / Good   (outlook) 
-		 * linecontent[4] = 21/12/2016  (Covered by filename,no need to read from line)
+		 * linecontent[4] = 21/12/2016 
 		 * linecontent[5] = NL  
-		 * linecontent[7] = Econ region name
 		 * **/
 
 
@@ -92,8 +84,7 @@ public class DataProcess {
 		
 		
 		
-scan.close();
-
+br.close();
 		} //end for loop (years)
 	}
 	
@@ -127,7 +118,7 @@ scan.close();
 		return null;
 	}
 
-	public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException {
+	/*public static void main(String[] args) throws IOException {
 		DataProcess test = new DataProcess();
 		
 		int[] noc = {0,1,1,2};
@@ -135,7 +126,7 @@ scan.close();
 		int year = 2018;
 		
 		test.get_job(noc, region, year).printInfo();
-		/*
+		 *
 		 * 
 		 * Electronic service technicians (household and business equipment)
 		 * 2-2-4-2
@@ -143,13 +134,13 @@ scan.close();
 		 * SK
 		 * 4760
 		 * 2019
-		 * */
+		 * 
 		
 		
 		
 		
 		
-	}
+	}*/
 
 
 
