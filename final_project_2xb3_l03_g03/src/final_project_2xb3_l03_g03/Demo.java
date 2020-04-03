@@ -13,7 +13,7 @@ public class Demo extends Sorting{
        //////////////////////////////////////////////////////
         //sort the arraylist of jobs(joblist) with respect to region name string(regions) alphabetically
 		Job[] temp = joblist.toArray(new Job[joblist.size()]);
-    	sortRegionS(temp);
+    	Sorting.sortRegionS(temp);
     	ArrayList<Job> sortedjoblist = new ArrayList<Job>(Arrays.asList(temp));
     	//sorted jobs are stored in sortedjoblist
 		//code2string works as a dictionary where index is the region code of the content,
@@ -67,10 +67,16 @@ public class Demo extends Sorting{
 			catch(NumberFormatException e) {}
 			System.out.println("Please enter the correct index");
 		}
-		System.out.println(userlocation + ", " + usercategory);
-        //get the user information
         //select the given region and category, and have a new arraylist
-        /////////////////////////////////////////////////////
+		ArrayList<Job> jobinthisregion = Searching.LocationSearch(sortedjoblist,code2string[userlocation]);
+		temp = joblist.toArray(new Job[jobinthisregion.size()]);
+		Sorting.sortNOC(temp);
+		ArrayList<Job> specificjobs = new ArrayList<Job>(Arrays.asList(temp));
+		specificjobs = Searching.NocSearch(specificjobs, usercategory);
+		for(Job j : specificjobs) {
+			j.printInfo();
+		}
+		/////////////////////////////////////////////////////
         //create a graph according to that
         //show the list of jobs(sorted by outlook)
         //allow the user have a close look at one job(outlook, relevant jobs)
