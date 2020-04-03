@@ -1,4 +1,3 @@
-package final_project_2xb3_l03_g03;
 
 public class Job// DataType for a job title
 {
@@ -25,7 +24,9 @@ public class Job// DataType for a job title
 	{
 		return noc[index];
 	}
-	
+	public int getnoc() {
+		return (noc[0]*1000+noc[1]*100+noc[2]*10+noc[3]);
+	}
 	public String get_title()
 	{
 		return title;
@@ -49,7 +50,11 @@ public class Job// DataType for a job title
 	public String get_regions() {
 		return regions;
 	}
-	
+	public void printbriefInfo() {
+		System.out.print("Job title: "+this.get_title());
+		System.out.println("    Noc _ "+this.get_noc(0)+" "+ this.get_noc(1)+" "+this.get_noc(2)+" "+this.get_noc(3));
+
+	}
 	public void printInfo() 
 	{
 		System.out.println("Job title: "+this.get_title());

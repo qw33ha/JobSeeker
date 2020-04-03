@@ -15,7 +15,7 @@ public class DFS {
 			}
 		}
 	}
-	public boolean marked(int w) {
+	public boolean hasPathTo(int w) {
 		return marked[w];
 	}
 	public int count() {

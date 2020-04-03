@@ -69,16 +69,64 @@ public class Demo extends Sorting{
 		}
         //select the given region and category, and have a new arraylist
 		ArrayList<Job> jobinthisregion = Searching.LocationSearch(sortedjoblist,code2string[userlocation]);
-		temp = joblist.toArray(new Job[jobinthisregion.size()]);
+		temp = jobinthisregion.toArray(new Job[jobinthisregion.size()]);
 		Sorting.sortNOC(temp);
 		ArrayList<Job> specificjobs = new ArrayList<Job>(Arrays.asList(temp));
 		specificjobs = Searching.NocSearch(specificjobs, usercategory);
-		for(Job j : specificjobs) {
-			j.printInfo();
-		}
+		temp = specificjobs.toArray(new Job[specificjobs.size()]);
+		Sorting.sortOutlook(temp);
 		/////////////////////////////////////////////////////
         //create a graph according to that
+		Graph G = new Graph(specificjobs.size());
+		for(int i = 0; i < specificjobs.size(); i++) {
+			for(int j = i + 1; j < specificjobs.size(); j++) {
+				if(specificjobs.get(i).get_noc(1) == specificjobs.get(j).get_noc(1) &&
+					specificjobs.get(i).get_noc(2) == specificjobs.get(j).get_noc(2))
+					G.addedge(i, j);
+			}
+		}
         //show the list of jobs(sorted by outlook)
+		System.out.println("Searching for jobs...");
+		int count = 0;
+		outer:
+		while(count < specificjobs.size() - 8) {
+			for(int i = 0; i < 8; i++) {
+				specificjobs.get(count).printbriefInfo();
+				count++;
+			}
+			System.out.println("\n\nPress Enter to see more, type 'quit' to quit scaning and have a close look a one job");
+			while(true) {
+				BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+				String input = reader.readLine();
+				if(input.equals(""))
+					break;
+				if(input.equals("quit"))
+					break outer;
+				System.out.println("Wrong input, try again!");
+			}
+		}
         //allow the user have a close look at one job(outlook, relevant jobs)
+		while(true) {
+			System.out.println("\n\n\nPlease type the Noc code of the job you are interested in:");
+			BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+			String noccode = reader.readLine();
+			int tem;
+			try {
+				int code = Integer.parseInt(noccode);
+				for(tem = 0; tem < specificjobs.size(); tem++) {
+					if(code == specificjobs.get(tem).getnoc()) {
+						specificjobs.get(tem).printInfo();
+						DFS dfs = new DFS(G,tem);
+						System.out.println("Number of relatedjobs: " + dfs.count());
+						for(int k = 0; k < specificjobs.size(); k++)
+							if(dfs.hasPathTo(k)) {
+								specificjobs.get(k).printbriefInfo();
+							}
+					}
+				}
+			break;
+			}
+			catch(NumberFormatException e) {}
+		}
     }
 }
