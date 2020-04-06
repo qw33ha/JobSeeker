@@ -4,6 +4,9 @@
   *  
   *  Description: A class for a undirected unweighed edge graph 
  */
+
+package final_project_2xb3_l03_g03;
+
 import java.util.ArrayList;
 /**
  * @brief An ADT that represents a undirected graph

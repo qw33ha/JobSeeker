@@ -1,4 +1,4 @@
-
+package final_project_2xb3_l03_g03;
 public class Job// DataType for a job title
 {
 	private int[] noc;// Four digit code by array
