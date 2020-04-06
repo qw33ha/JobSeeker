@@ -62,6 +62,14 @@ public class Comparable {
 		return 0;
 	}
 	
+	/**
+	 * @brief A method that generate a comparator which compares the Job objects in its region string's alphabet order.
+	 * @param a is one of the Job object.
+	 * @param b is another Job object.
+	 * @return 1 if the Job object in the first parameter is greater than the second one in its region's 
+	 * string alphabet order; 0 if equal; -1 if worse.
+	 * 
+	 */
 	public static int CompareRegionS(Job a, Job b) {
 		String Ra = a.get_regions();
 		String Rb = b.get_regions();
