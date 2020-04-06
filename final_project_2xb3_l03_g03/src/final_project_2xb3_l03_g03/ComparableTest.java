@@ -2,7 +2,7 @@
   *  Author: Senni Tan
   *  Revised: Apr 6, 2020
   *  
-  *  Description: A class used for comparator in sorting module.
+  *  Description: Unit tests for Comparable.
  */
 
 package final_project_2xb3_l03_g03;
