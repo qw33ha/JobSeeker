@@ -1,6 +1,24 @@
+/**
+  *  Author: Senni Tan
+  *  Revised: Apr 6, 2020
+  *  
+  *  Description: A class used for comparator in sorting module.
+ */
+
 package final_project_2xb3_l03_g03;
 
+/**
+ * @brief A class used for generating comparators in sorting module.
+ */
 public class Comparable {
+	
+	/**
+	 * @brief A method that used to generate a comparator which compares the Job objects in alphabet order.
+	 * @param a is one of the Job object.
+	 * @param b is another Job object.
+	 * @return 1 if the Job object in the first parameter is alphabetically "larger" than the second one;
+	 * 0 if equal; -1 if smaller.
+	 */
 	public static int CompareString(Job a, Job b) {
 		String a1 = a.get_title();
 		String b1 = b.get_title();
@@ -8,6 +26,14 @@ public class Comparable {
 		return cmp;
 	}
 	
+	/**
+	 * @brief A method that generate a comparator which compares the Job objects in outlook.
+	 * @param a is one of the Job object.
+	 * @param b is another Job object.
+	 * @return 1 if the Job object in the first parameter is better than the second one in its outlook;
+	 * 0 if equal; -1 if worse.
+	 * @detail Outlook ranking: Good > Fair > Limited > Undetermined
+	 */
 	public static int CompareOutlook(Job a, Job b) {
 		int a1 = a.get_outlook();
 		int b1 = b.get_outlook();
@@ -18,6 +44,14 @@ public class Comparable {
 		return 0;
 	}
 	
+	/**
+	 * @brief A method that generate a comparator which compares the Job objects in NOC number order.
+	 * @param a is one of the Job object.
+	 * @param b is another Job object.
+	 * @return 1 if the Job object in the first parameter is better than the second one in its NOC 
+	 * number order; 0 if equal; -1 if worse.
+	 * @detail The NOC number order is same as the normal number order. 
+	 */
 	public static int CompareNOC(Job a, Job b) {
 		int NOCa = a.get_noc(0);
 		int NOCb = b.get_noc(0);
