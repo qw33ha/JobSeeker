@@ -48,8 +48,8 @@ public class Comparable {
 	 * @brief A method that generate a comparator which compares the Job objects in NOC number order.
 	 * @param a is one of the Job object.
 	 * @param b is another Job object.
-	 * @return 1 if the Job object in the first parameter is better than the second one in its NOC 
-	 * number order; 0 if equal; -1 if worse.
+	 * @return 1 if the Job object in the first parameter is greater than the second one in its NOC 
+	 * number order; 0 if equal; -1 if less.
 	 * @detail The NOC number order is same as the normal number order. 
 	 */
 	public static int CompareNOC(Job a, Job b) {
@@ -67,8 +67,7 @@ public class Comparable {
 	 * @param a is one of the Job object.
 	 * @param b is another Job object.
 	 * @return 1 if the Job object in the first parameter is greater than the second one in its region's 
-	 * string alphabet order; 0 if equal; -1 if worse.
-	 * 
+	 * string alphabet order; 0 if equal; -1 if less.
 	 */
 	public static int CompareRegionS(Job a, Job b) {
 		String Ra = a.get_regions();
