@@ -4,9 +4,10 @@
   *  
   *  Description: Test the Graph class 
  */
-package final_project_2xb3_l03_g03;
 import org.junit.*;
 import static org.junit.Assert.*;
+
+import java.util.ArrayList;
 
 public class TestGraph {
 	private Graph G;
@@ -80,6 +81,13 @@ public class TestGraph {
 	 */
 	public void Testadj2() {
 		assertTrue(G.adj(0).contains(1) && G.adj(0).contains(2));
+	}
+	@Test (expected = IllegalArgumentException.class)
+	/**
+	 * @brief Test the method adj(i) when the input is illegal
+	 */
+	public void Testadj3() {
+		ArrayList<Integer> temp = G.adj(10);
 	}
 	@Test
 	/**

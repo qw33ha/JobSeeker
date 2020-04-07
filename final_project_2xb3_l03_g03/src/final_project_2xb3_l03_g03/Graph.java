@@ -4,9 +4,6 @@
   *  
   *  Description: A class for a undirected unweighed edge graph 
  */
-
-package final_project_2xb3_l03_g03;
-
 import java.util.ArrayList;
 /**
  * @brief An ADT that represents a undirected graph
@@ -60,8 +57,10 @@ public class Graph {
 	 * @brief Get the vertices connected to vertex v
 	 * @param v The index of the vertex we are interested
 	 * @return An ArrayList of integers representing the indices of the neighboring nodes 
+	 * @exception IllegalArgumentException When then input is not a legal node of the graph
 	 */
 	public ArrayList<Integer> adj(int v) {
+		if(v < 0 || v > V)	throw new IllegalArgumentException();
 		return adj[v];
 	}
 }

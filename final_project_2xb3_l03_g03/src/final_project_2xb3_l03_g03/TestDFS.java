@@ -4,10 +4,7 @@
   *  
   *  Description: Test the DFS class 
  */
-package final_project_2xb3_l03_g03;
 import org.junit.*;
-import org.junit.jupiter.api.Test;
-
 import static org.junit.Assert.*;
 
 public class TestDFS {
@@ -34,6 +31,13 @@ public class TestDFS {
 		G = null;
 		dfs = null;
 	}
+	@Test (expected = IllegalArgumentException.class)
+	/**
+	 * @brief Test the exception of the constructor
+	 */
+	public void Testconstructorexc() {
+		DFS fail = new DFS(G,10);
+	}
 	@Test
 	/**
 	 * @brief Test the method hasPathTo() for all reachable nodes
@@ -47,6 +51,13 @@ public class TestDFS {
 	 */
 	public void TesthasPathTofalse() {
 		assertFalse(dfs.hasPathTo(3) && dfs.hasPathTo(4) && dfs.hasPathTo(6));
+	}
+	@Test (expected = IllegalArgumentException.class)
+	/**
+	 * @brief Test the method hasPathTo() when the input is not legal
+	 */
+	public void TesthasPathToexc() {
+		Boolean fail = dfs.hasPathTo(50);
 	}
 	@Test
 	/**
