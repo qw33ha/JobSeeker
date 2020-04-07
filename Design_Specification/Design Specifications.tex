@@ -1,0 +1,248 @@
+\documentclass[12pt]{article}
+
+\usepackage{graphicx}
+\usepackage{paralist}
+\usepackage{hyperref}
+\usepackage{xspace}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{multirow}
+
+\newcommand{\latex}{\LaTeX\xspace}
+
+\oddsidemargin 0mm
+\evensidemargin 0mm
+\textwidth 160mm
+\textheight 200mm
+\renewcommand\baselinestretch{1.0}
+
+\pagestyle {plain}
+\pagenumbering{arabic}
+
+\newcounter{stepnum}
+
+\title{Design Specification \\ 
+JobSeeker \\ 
+\large Version 2}
+\author{Zihao Du\\
+Senni Tan\\
+Gengyun Wang\\
+Wenzhi Wang\\
+Lab 3 Group 3\\
+Computing and Software Department, Mcmaster University \\
+SFWR ENG 2XB3, Software Engineering Practice and Experience:\\ Binding Theory to Practice\\
+}
+
+\begin {document}
+
+\maketitle
+\newpage
+
+\section*{Revision Page}
+\noindent By  virtue  of  submitting  this  document  we  electronically  sign  and  date  that  the  work  being  submitted  by  all  the individuals  in  the  group  is  their  exclusive  work  as  a  group  and  we  consent  to  make  available  the  application developed  through  [CS]  or  [SE]-2XB3  project,  the  reports,  presentations,  and  assignments  (not  including  my name and student number) for future teaching purposes.\\
+\noindent \textbf{\emph{First revision:}}
+\begin{description}
+\item    Senni Tan --- Edited the title page and created the contribution table.
+\item    Zihao Du --- Added the attestation and consent in Revision.
+\end{description}
+\noindent \textbf{\emph{Second revision:}}
+\begin{description}
+\item    Senni Tan --- Edited the contribution table.
+\item    Zihao Du--- Edited the contribution table.
+\item    Wang Wenzhi --- Edit the contribution table.
+\item    Gengyun Wang --- Edited the contribution table.
+\end{description}
+\newpage
+
+\section*{Contribution Page}
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c| } 
+\hline
+Name & Role(s) & Contribution & Comments \\
+\hline
+\multirow{3}{4em}{Zihao Du} & Designer & Proposal Abstract and motivation & \\ 
+& Researcher & Database of jobs & \\ 
+& Designer & SRS Functional requirement  & \\ 
+& ~ & Graphing algorithm implementation & \\
+& ~ & Client module & \\
+& Tester & Unit test for graphing algorithm & \\
+\hline
+\multirow{3}{4em}{Senni Tan} & Designer & Proposal I/O& \\ 
+& ~ & SRS Non-functional requirement  & \\ 
+& ~ & Sorting Algorithm Implementation & \\
+& Tester & Unit test for sorting algorithm implementation & \\
+\hline
+\multirow{3}{4em}{Gengyun Wang} & Designer & Proposal Prior Work& \\ 
+& ~ & SRS Assumptions, Domain  & \\ 
+& ~ & Searching Algorithm Implementation & \\
+& Tester & Unit test for searching algorithm implementation & \\
+\hline
+\multirow{3}{4em}{Wenzhi Wang} & Designer & Proposal Reference page& \\ 
+& ~ & SRS  Maintenance and Development & \\ 
+& ~ & Data processing implementation & \\
+& Tester & Test and modify the client code implementation & \\
+\hline
+\end{tabular}
+\end{center}
+
+\newpage
+
+\section*{Executive Summary}
+
+
+\tableofcontents
+\newpage
+
+\section{Description of Modules}
+\section{Detailed description of interfaces}
+\section* {Comparator Module}
+
+\subsection* {Module}
+
+Comparable
+
+\subsection* {Uses}
+
+Job
+
+\subsection* {Syntax}
+
+\subsubsection* {Exported Access Programs}
+
+\begin{tabular}{| l | l | l | p{6cm} |}
+\hline
+\textbf{Routine name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions}\\
+\hline
+CompareString & Job, Job & $\mathbb{Z}$ & \\
+\hline
+CompareOutlook & Job, Job & $\mathbb{Z}$ & \\
+\hline
+CompareNOC & Job, Job & $\mathbb{Z}$ & \\
+\hline
+CompareRegionS & Job, Job & $\mathbb{Z}$ & \\
+\hline
+\end{tabular}
+
+\subsection* {Semantics}
+
+\subsubsection* {Access Routine Semantics}
+
+\noindent CompareString(a, b):
+\begin{itemize}
+\item output: $out := $ a.get\_title.compareTo(b.get\_title)
+\item exception: None
+\end{itemize}
+\noindent \textit{// compareTo is a build in method to compare String in lexgraphical order.}\\
+
+\noindent CompareOutlook(a, b):
+\begin{itemize}
+\item output: $out :=$ (a.get\_outlook $>$ b.get\_outlook) $\Rightarrow$ 1 $|$ (a.get\_outlook $<$ b.get\_outlook) $\Rightarrow$ -1 $|$ 0
+\item exception: None
+\end{itemize}
+
+\noindent CompareNOC(a, b):
+\begin{itemize}
+\item output: $out :=$ (a.get\_noc(0) $>$ b.get\_noc(0)) $\Rightarrow$ 1 $|$ (a.get\_noc(0) $<$ b.get\_noc(0)) $\Rightarrow$ -1 $|$ 0
+\item exception: None
+\end{itemize}
+
+\noindent CompareRegionS(a, b):
+\begin{itemize}
+\item output: $out := $ a.get\_regions.compareTo(b.get\_regions)
+\item exception: None
+\end{itemize}
+\noindent \textit{// compareTo is a build in method to compare String in lexgraphical order.}\\
+
+\newpage
+
+\section* {Sorting Module}
+
+\subsection* {Module}
+
+Sorting
+
+\subsection* {Uses}
+
+Comparable
+
+\subsection* {Syntax}
+
+\subsubsection* {Exported Access Programs}
+
+\begin{tabular}{| l | l | l | p{6cm} |}
+\hline
+\textbf{Routine name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions}\\
+\hline
+sortString & Seq of Job & ~ & \\
+\hline
+sortOutlook & Seq of Job & ~ & \\
+\hline
+sortNOC & Seq of Job & ~ & \\
+\hline
+sortRegionS & Seq of Job & ~ & \\
+\hline
+\end{tabular}
+
+\subsection* {Semantics}
+
+\subsubsection* {Access Routine Semantics}
+
+\noindent sortString(a):
+\begin{itemize}
+\item transition: sortString(a, 0, $|a|$-1)
+\item exception: None
+\end{itemize}
+
+\noindent sortOutlook(a):
+\begin{itemize}
+\item transition: sortOutlook(a, 0, $|a|$-1)
+\item exception: None
+\end{itemize}
+
+\noindent sortNOC(a):
+\begin{itemize}
+\item transition: sortNOC(a, 0, $|a|$-1)
+\item exception: None
+\end{itemize}
+
+\noindent sortRegionS(a):
+\begin{itemize}
+\item transition: sortRegionS(a, 0, $|a|$-1)
+\item exception: None
+\end{itemize}
+
+\subsection*{Local Functions}
+
+\noindent exch: Seq of Job $\times$ $\mathbb{Z} \times \mathbb{Z}$  $ \rightarrow $ None\\
+\noindent $\mbox{exch}(a, i, j) \equiv$ exchange a[i] and a[j] in the array\\
+
+\noindent sortString: Seq of Job $\times$ $\mathbb{Z} \times \mathbb{Z}$ $ \rightarrow $ None\\
+\noindent $\mbox{sortString}(a, lo, hi) \equiv$ (hi $<=$ lo) $\Rightarrow$ return $|$ sortString(a, lo, j-1) \&\& sortString(a, j+1, hi) where j = partitionString(a, lo, hi)\\
+
+\noindent partitionString: Seq of Job $\times$ $\mathbb{Z} \times \mathbb{Z}$ $ \rightarrow $ None\\
+\noindent $\mbox{partitionString}(a, lo, hi) \equiv$ partition on array $a$ using ComapreString, see detail in code\\
+
+\noindent sortOutlook: Seq of Job $\times$ $\mathbb{Z} \times \mathbb{Z}$ $ \rightarrow $ None\\
+\noindent $\mbox{sortOutlook}(a, lo, hi) \equiv$ (hi $<=$ lo) $\Rightarrow$ return $|$ sortOutlook(a, lo, j-1) \&\& sortOutlook(a, j+1, hi) where j = partitionOutlook(a, lo, hi)\\
+
+\noindent partitionOutlook: Seq of Job $\times$ $\mathbb{Z} \times \mathbb{Z}$ $ \rightarrow $ None\\
+\noindent $\mbox{partitionOutlook}(a, lo, hi) \equiv$ partition on array $a$ using ComapreOutlook, see detail in code\\
+
+\noindent sortNOC: Seq of Job $\times$ $\mathbb{Z} \times \mathbb{Z}$ $ \rightarrow $ None\\
+\noindent $\mbox{sortNOC}(a, lo, hi) \equiv$ (hi $<=$ lo) $\Rightarrow$ return $|$ sortNOC(a, lo, j-1) \&\& sortNOC(a, j+1, hi) where j = partitionNOC(a, lo, hi)\\
+
+\noindent partitionNOC: Seq of Job $\times$ $\mathbb{Z} \times \mathbb{Z}$ $ \rightarrow $ None\\
+\noindent $\mbox{partitionNOC}(a, lo, hi) \equiv$ partition on array $a$ using ComapreNOC, see detail in code\\
+
+\noindent sortRegionS: Seq of Job $\times$ $\mathbb{Z} \times \mathbb{Z}$ $ \rightarrow $ None\\
+\noindent $\mbox{sortRegionS}(a, lo, hi) \equiv$ (hi $<=$ lo) $\Rightarrow$ return $|$ sortRegionS(a, lo, j-1) \&\& sortRegionS(a, j+1, hi) where j = partitionRegionS(a, lo, hi)\\
+
+\noindent partitionRegionS: Seq of Job $\times$ $\mathbb{Z} \times \mathbb{Z}$ $ \rightarrow $ None\\
+\noindent $\mbox{partitionRegionS}(a, lo, hi) \equiv$ partition on array $a$ using ComapreRegionS, see detail in code\\
+\section{View of uses relationship}
+\section{Trace back to requirements}
+\section{Description of implementation}
+\section{Internal review}
+
+\end {document}
