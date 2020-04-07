@@ -4,7 +4,9 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
-
+/**
+* @brief Dataprocess class that  processes the datasets and return a list of jobs.
+*/
 public class DataProcess {
 //	public Job[] dataset;
     public ArrayList<Job> dataset = new ArrayList<Job>();
@@ -90,15 +92,18 @@ br.close();
 		} //end for loop (years)
 	}
 	
-	
+	/**
+	* @brief: The only method that is supposed to be used by other modules. 
+	* @return : the dataset as a list of jobs.  
+	*/
 	public ArrayList<Job> get_data() 
 	{
 		return dataset;
 	}
 	
 	//The following methods belongs to DataProcess Class
-	// not the dataset object returned
-	
+	// and is only used for testing if this module is working correctly
+	// the actual method for searching jobs are implemented as the Searching module
 	public Job get_job(int[] noc, int region, int year) 
 	{
 		
