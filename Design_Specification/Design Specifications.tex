@@ -240,9 +240,199 @@ sortRegionS & Seq of Job & ~ & \\
 
 \noindent partitionRegionS: Seq of Job $\times$ $\mathbb{Z} \times \mathbb{Z}$ $ \rightarrow $ None\\
 \noindent $\mbox{partitionRegionS}(a, lo, hi) \equiv$ partition on array $a$ using ComapreRegionS, see detail in code\\
+\newpage
+
+\section* {Graph Module}
+
+\subsection*{Module}
+
+Graph
+
+\subsection* {Uses}
+
+N/A
+
+\subsection* {Syntax}
+
+\subsubsection* {Exported Constants}
+
+None
+
+\subsubsection* {Exported Types}
+
+Graph = ?
+
+\noindent \textit{//An undirected graph with unweighed edges}
+
+\subsubsection* {Exported Access Programs}
+
+\begin{tabular}{| l | l | l | l |}
+\hline
+\textbf{Routine name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions}\\
+\hline
+Graph & $\mathbb{Z}$ & Graph & NegativeArraySizeException\\
+\hline
+addedge & $\mathbb{N}$, $\mathbb{N}$ & ~ & IllegalArgumentException\\
+\hline
+V & ~ & $\mathbb{N}$ & ~\\
+\hline
+E & ~ & $\mathbb{N}$ & ~\\
+\hline
+adj & $\mathbb{N}$ & Seq of $\mathbb{N}$ & IllegalArgumentException\\
+\hline
+\end{tabular}
+
+
+\subsection* {Semantics}
+
+\subsubsection* {State Variables}
+
+$V$: $\mathbb{N}$\\
+$E$: $\mathbb{N}$\\
+$adj$: Seq of Seq of $\mathbb{N}$
+
+\subsubsection* {State Invariant}
+
+None
+\subsubsection* {Assumptions}
+
+The constructor Graph is called for each object instance before any other access routine is called for that object.  The constructor cannot be called on
+an existing object.
+
+\subsubsection* {Access Routine Semantics}
+
+\noindent \textit{//Constructor of Graph class}\\
+Graph($v$):
+\begin{itemize}
+\item transition: $V, E, adj := v, 0, \mbox{Seq of Seq of   }\mathbb{N}\mbox{ with length v}$
+\item output: $out := \mathit{self}$
+\item exception: $exc := v < 0 \Rightarrow \mbox{NegativeArraySizeException}$
+\end{itemize}
+
+\noindent \textit{//Connect vertex w and vertex v}\\
+\noindent addedge($w$, $v$):
+\begin{itemize}
+\item transition: $E, adj[w], adj[v] := E + 1, adj[w] \,||\, v, adj[v] \,||\, w$
+\item exception: $exc := w < 0 \lor w > V  \lor v < 0 \lor v \lor V \Rightarrow \mbox{IllegalArgumentException}$
+\end{itemize}
+
+\noindent \textit{//Getter, get the number of edges}\\
+\noindent E():
+\begin{itemize}
+\item output: $out := E$
+\item exception: None
+\end{itemize}
+
+\noindent \textit{//Getter, get the number of vertices}\\
+\noindent V():
+\begin{itemize}
+\item output: $out := V$
+\item exception: None
+\end{itemize}
+
+\noindent \textit{//Getter, get a list of nodes that are conneted with vertex v}\\
+\noindent adj($v$):
+\begin{itemize}
+\item output: $out := adj[v]$
+\item exception: $exc := v < 0 \lor v > V \Rightarrow \mbox{IllegalArgumentException}$
+\end{itemize}
+\newpage
+
+\section* {Graph Module}
+
+\subsection*{Module}
+
+DFS
+
+\subsection* {Uses}
+
+Graph
+
+\subsection* {Syntax}
+
+\subsubsection* {Exported Constants}
+
+None
+
+\subsubsection* {Exported Types}
+
+DFS = ?
+
+\noindent \textit{//Detect the reachable vertices from a source vertex}
+
+\subsubsection* {Exported Access Programs}
+
+\begin{tabular}{| l | l | l | l |}
+\hline
+\textbf{Routine name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions}\\
+\hline
+DFS & Graph, $\mathbb{N}$  & DFS & IllegalArgumentException\\
+\hline
+hasPathTo & $\mathbb{N}$ & $\mathbb{B}$ & IllegalArgumentException\\
+\hline
+count & ~ & $\mathbb{N}$ & ~\\
+\hline
+\end{tabular}
+
+
+\subsection* {Semantics}
+
+\subsubsection* {State Variables}
+
+$count$: $mathbb{N}$\\
+$marked$: Seq of $\mathbb{B}$
+
+\subsubsection* {State Invariant}
+
+None
+\subsubsection* {Assumptions}
+
+The constructor DFS is called for each object instance before any other access routine is called for that object.  The constructor cannot be called on
+an existing object.
+
+\subsubsection* {Access Routine Semantics}
+
+\noindent \textit{//Constructor of DFS class}\\
+Graph($g$, $s$):
+\begin{itemize}
+\item transition: $count, \mbox{marked} := \mbox{number of reachable nodes}, \mbox{Seq of }\mathbb{B}\mbox{ recording if a vertex is reachable}$
+\item output: $out := \mathit{self}$
+\item exception: $exc := s < 0 \lor s >= g.V() \Rightarrow \mbox{IllegalArgumentException}$
+\end{itemize}
+
+\noindent \textit{//Determine if vertex w is reachable from the source vertex}\\
+\noindent hasPathTo($w$):
+\begin{itemize}
+\item output: $out := marked[w]$
+\item exception: $exc := w < 0 \lor w >= V \Rightarrow \mbox{IllegalArgumentException}$
+\end{itemize}
+
+\noindent \textit{//Getter, get the number of reachable vertices}\\
+\noindent count():
+\begin{itemize}
+\item output: $out := count$
+\item exception: None
+\end{itemize}
+\newpage
+
 \section{View of uses relationship}
 \section{Trace back to requirements}
 \section{Description of implementation}
+\section* {DFS Module}
+
+\subsection*{Module}
+
+DFS
+
+\subsection* {Uses}
+
+Graph
+
+\subsection*{Local Functions}
+
+\noindent dfs: $Graph \times \mathbb{N}$\\
+\noindent \textit{//The private dfs method recursively call itself to detect deeper layer of the graph until it hits a sink vertex, then it will turn back to the previous layer and detect again. It updates the state variable "count" and "marked[]" to avoid repeatation of exploration}\\
+
 \section{Internal review}
 
 \end {document}
