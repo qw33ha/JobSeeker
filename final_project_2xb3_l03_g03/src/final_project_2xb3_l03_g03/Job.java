@@ -19,26 +19,46 @@ public class Job// DataType for a job title
 		this.region = region;
 		this.regions = regions;
 	}
-	
+	/**
+	 * @brief Get a digit of the noc code of this Job object. Used for sorting Job into different categories
+	 * @param index the index of noc digit desired
+	 * @return noc[index]:e.g.  NOC=[2,3,4,2], get_noc(0) = 2, get_noc(1) = 3 
+	 */
 	public int get_noc(int index)
 	{
 		return noc[index];
 	}
+	/**
+	 * @brief Get noc code of this Job object.
+	 * @return Noc as one number e.g. NOC[2,2,4,2] as 2242. Used for display.
+	 */
 	public int getnoc() {
 		return (noc[0]*1000+noc[1]*100+noc[2]*10+noc[3]);
 	}
+	/**
+	 * @brief Get title of this Job object as string:e.g. Electronic service technicians (household and business equipment)
+	 */
 	public String get_title()
 	{
 		return title;
 	}
+	/**
+	 * @brief Get location(Province) of this Job object as string :e.g. QC | NL
+	 */
 	public String get_location()
 	{
 		return location;
 	}
+	/**
+	 * @brief Get region code of this Job object as integer:e.g. 1310 | 1320
+	 */
 	public int get_region()
 	{
 		return region;
 	}
+	/**
+	 * @brief Get outlook number of this Job object as integer: e.g.  0 or 1 or 2 or 3
+	 */
 	public int get_outlook()
 	{
 		return outlook+10-10;
@@ -47,6 +67,9 @@ public class Job// DataType for a job title
 	{
 		return year+1-1;
 	}
+	/**
+	 * @brief Get region name of this Job object as String:e.g. Campbellton - Miramichi | Moncton - Richibucto
+	 */
 	public String get_regions() {
 		return regions;
 	}
