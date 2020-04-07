@@ -150,7 +150,7 @@ public class Sorting extends Comparable {
 		exch(a, lo, j);
 		return j;
 	}
-	
+
 	/**
 	 * @brief A method that used to sort a Job object based on its region name.
 	 * @param a is the array of the Job objects that needs to be sorted.
