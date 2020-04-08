@@ -78,6 +78,10 @@ public class Job// DataType for a job title
 		System.out.println("    Noc _ "+this.get_noc(0)+" "+ this.get_noc(1)+" "+this.get_noc(2)+" "+this.get_noc(3));
 
 	}
+	public String getbriefInfo() {
+		 return "Job title: "+this.get_title()+"    Noc _ "+this.get_noc(0)+" "+ this.get_noc(1)+" "+this.get_noc(2)+" "+this.get_noc(3);
+
+	}
 	public void printInfo() 
 	{
 		System.out.println("Job title: "+this.get_title());
@@ -90,5 +94,10 @@ public class Job// DataType for a job title
 		System.out.println("Year "+this.get_year()+"\n");
 		
 	}
+	public String getInfo() 
+	{
+		return "Job title: "+this.get_title()+"\nNoc _ "+this.get_noc(0)+" "+ this.get_noc(1)+" "+this.get_noc(2)+" "+this.get_noc(3)+"\nOutlook: "+this.get_outlook()+"\nProvince: "+this.get_location()+"\nEcon region code: "+this.get_region()+"\nEcon region name: "+this.get_regions()+"\nYear "+this.get_year()+"\n";
+	}
+
 	
 }//end
