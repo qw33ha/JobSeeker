@@ -4,6 +4,9 @@
   *  
   *  Description: Test the DFS class 
  */
+
+package final_project_2xb3_l03_g03;
+
 import org.junit.*;
 import static org.junit.Assert.*;
 
