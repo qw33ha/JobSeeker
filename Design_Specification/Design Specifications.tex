@@ -102,6 +102,220 @@ The design is made up with nine modules including the client module. These modul
 \end{center}
 \newpage
 \section{Detailed description of interfaces}
+%% Job
+\section* {Job ADT Module}
+
+\subsection*{Template Module}
+
+Job
+
+\subsection* {Uses}
+
+N/A
+
+\subsection* {Syntax}
+
+\subsubsection* {Exported Types}
+
+Job = ?
+
+\subsubsection* {Exported Access Programs}
+
+\begin{tabular}{| l | l | l | l |}
+\hline
+\textbf{Routine name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions}\\
+\hline
+Job & seq of $\mathbb{Z}$, String,$\mathbb{Z}$,$\mathbb{Z}$,String,$\mathbb{Z}$,String  & Job & \\
+\hline
+get\_noc & $\mathbb{Z}$ & $\mathbb{Z}$ &\\
+\hline
+getnoc & ~ & seq of $\mathbb{Z}$ &\\
+\hline
+get\_title & ~ & String &\\
+\hline
+get\_location & ~ & String &\\
+\hline
+get\_region & ~ & $\mathbb{Z}$ &\\
+\hline
+get\_outlook & ~ & $\mathbb{Z}$ &\\
+\hline
+get\_year & ~ & $\mathbb{Z}$ &\\
+\hline
+get\_regions & ~ & String &\\
+\hline
+getInfo & ~ & String &\\
+\hline
+getbriefInfo & ~ & String &\\
+\hline
+printInfo & ~ &~ &\\
+\hline
+printbriefInfo & ~ &~ &\\
+\hline
+\end{tabular}
+
+\subsection* {Semantics}
+
+\subsubsection* {State Variables}
+
+$noc$: seq of $\mathbb{Z}$\\
+$title$: String\\
+$outlook$: $\mathbb{Z}$\\
+$year$: $\mathbb{Z}$\\
+$region$: $\mathbb{Z}$\\
+$regions$: String\\
+$location$: String\\
+
+\subsubsection* {State Invariant}
+
+None
+
+\subsubsection* {Assumptions}
+
+The constructor Job is called for each object instance before any other
+access routine is called for that object.  The constructor cannot be called on
+an existing object.
+
+\subsubsection* {Access Routine Semantics}
+
+Job($noc, title, outlook, year, location, region, regions$):
+\begin{itemize}
+\item transition: $noc, title, outlook, year, location, region, regions := noc, title, outlook, year, location, region, regions$
+\item output: $out := \mathit{self}$
+\item exception: None
+\end{itemize}
+
+\noindent get\_noc($index$):
+\begin{itemize}
+\item output: $out := noc[index]$
+\item exception: None
+\end{itemize}
+
+\noindent getnoc( ):
+\begin{itemize}
+\item output: $out := noc[0]*1000+noc[1]*100+noc[2]*10+noc[3]$
+\item exception: None
+\end{itemize}
+
+\noindent get\_title( ):
+\begin{itemize}
+\item output: $out := title$
+\item exception: None
+\end{itemize}
+
+\noindent get\_location( ):
+\begin{itemize}
+\item output: $out := location$
+\item exception: None
+\end{itemize}
+
+\noindent get\_region( ):
+\begin{itemize}
+\item output: $out := region$
+\item exception: None
+\end{itemize}
+
+\noindent get\_outlook( ):
+\begin{itemize}
+\item output: $out := outlook$
+\item exception: None
+\end{itemize}
+
+\noindent get\_year( ):
+\begin{itemize}
+\item output: $out := year$
+\item exception: None
+\end{itemize}
+
+\noindent get\_regions( ):
+\begin{itemize}
+\item output: $out := regions$
+\item exception: None
+\end{itemize}
+
+\noindent printbriefInfo( ):
+\begin{itemize}
+\item exception: None
+\end{itemize}
+
+\noindent getbriefInfo( ):
+\begin{itemize}
+\item output: $out := "Job\ title: "+this.get\_title()+"    Noc\ \_ "+this.get\_noc(0)+" "+ this.get\_noc(1)+" "+this.get\_noc(2)+" "+this.get\_noc(3)$
+\item exception: None
+\end{itemize}
+
+\noindent printInfo( ):
+\begin{itemize}
+\item exception: None
+\end{itemize}
+
+\noindent getInfo( ):
+\begin{itemize}
+\item output: $out := "Job\ title: "+this.get\_title()+"\backslash nNoc \_ "+this.get\_noc(0)+" "+ this.get\_noc(1)+" "+this.get\_noc(2)+" "+this.get\_noc(3)+"\backslash nOutlook: "+this.get\_outlook()+"\backslash nProvince: "+this.get\_location()+"\backslash nEcon region code: "+this.get\_region()+"\backslash nEcon\ region\ name: "+this.get\_regions()+"\backslash nYear "+this.get\_year()+"\backslash n"$
+\item exception: None
+\end{itemize}
+%%End Job
+
+%%data process
+\section* {DataProcess Module}
+
+\subsection*{Module}
+
+DataProcess
+
+\subsection* {Uses}
+
+Job
+
+\subsection* {Syntax}
+
+\subsubsection* {Exported Types}
+
+DataProcess = ?
+
+\subsubsection* {Exported Access Programs}
+
+\begin{tabular}{| l | l | l | l |}
+\hline
+\textbf{Routine name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions}\\
+\hline
+DataProcess &~ & ~ &FileNotFoundException \\
+\hline
+get\_data &~ & seq of Job & \\
+\hline
+
+\end{tabular}
+
+\subsection* {Semantics}
+
+\subsubsection* {State Variables}
+
+$dataset$: seq of Job\\
+
+
+\subsubsection* {State Invariant}
+
+None
+
+\subsubsection* {Assumptions}
+
+The constructor DataProcess is called only once for only one object for reading the dataset files.
+
+\subsubsection* {Access Routine Semantics}
+
+DataProcess( ):
+\begin{itemize}
+\item transition: $dataset + Job$
+\item output: $out := \mathit{self}$
+\item exception: FileNotFoundException
+\end{itemize}
+
+get\_data( ):
+\begin{itemize}
+\item output: $out := dataset$
+\item exception: None
+\end{itemize}
+
+%%end data process
 \section* {Comparator Module}
 
 \subsection* {Module}
