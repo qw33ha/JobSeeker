@@ -107,7 +107,7 @@ public class Demo extends Sorting{
 				specificjobs.get(count).printbriefInfo();
 				count++;
 			}
-			System.out.println("\n\nPress Enter to see more, type 'quit' to quit scaning and have a close look a one job");
+			System.out.println("\n\nPress Enter to see more job titles; type 'quit' to quit scaning and have a close look at one job");
 			while(true) {
 				BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 				String input = reader.readLine();
@@ -120,7 +120,7 @@ public class Demo extends Sorting{
 		}
         //allow the user have a close look at one job(outlook, relevant jobs)
 		while(true) {
-			System.out.println("\n\n\nPlease type the Noc code of the job you are interested in:");
+			System.out.println("\n\n\nPlease type the Noc code (just the number, no \"NOC\" in front) of the job you are interested in:");
 			BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 			String noccode = reader.readLine();
 			int tem;
