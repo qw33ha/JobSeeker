@@ -8,6 +8,7 @@
 \usepackage{amsmath}
 \usepackage{multirow}
 
+
 \newcommand{\latex}{\LaTeX\xspace}
 
 \oddsidemargin 0mm
@@ -95,6 +96,11 @@ Name & Role(s) & Contribution & Comments \\
 \newpage
 
 \section{Description of Modules}
+The design is made up with nine modules including the client module. These modules can be divided into four categories: Data Processing, Sorting, Searching and Graphing.\\\newline Job class and Dataprocess class belongs to Data Processing, which make use of data from the database and store that into some data structures in Java. Job class defines state variables for an object Job, which is an important and fundamental object for the design. The methods in Job class are all getters. Dataprocess class takes no input and use Job class to store information from dataset into its state variable "joblist".\\\newline Sorting catagory contains two classes: Comparable and Sorting. Since we need to sort by different criteria, the Comparable class provides different compareTo methods. The Sorting class inherits these methods and use quicksort algorithm to sort the input ArrayList. \\\newline Searching catagory contains only a single module Searching.Just like Sorting class, it provides static functions instead of creating objects. It uses binary search assuming that the ArrayList is already sorted to get the kind of Job the user what and return them in an ArrayList. \\\newline The Graphing part is a trival one. It contains two classes: Graph and DFS. Graph creates an undirected graph class while DFS is an object exploring reachable nodes with depth-frist search algorithm based on a Graph class. \\\newline The client module part uses outputs of Searching, Sorting and Graphing parts. It also makes use of a class called Noc which provides a list of job catagories for user selection and demostration.
+\begin{center}
+\includegraphics[width=0.8\textwidth]{UML Diagram.png}
+\end{center}
+\newpage
 \section{Detailed description of interfaces}
 \section* {Comparator Module}
 
