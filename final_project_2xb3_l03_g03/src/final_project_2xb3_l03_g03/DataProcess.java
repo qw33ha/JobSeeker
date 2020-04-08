@@ -2,7 +2,7 @@
   *  Author: Wang wenzhi
   *  Revised: April 7, 2020
   *  
-  *  Description: A module that read in and process the dataset
+  *  Description: A module that reads in and processes the dataset
  */
 package final_project_2xb3_l03_g03;
 
