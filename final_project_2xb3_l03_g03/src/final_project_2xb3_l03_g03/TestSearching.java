@@ -19,7 +19,7 @@ import org.junit.Test;
  * @brief A class tests the Searching module.
  */
 
-public class TestSearching {
+public class TestSearching extends Searching{
 	
 	static ArrayList<Job> dataset = new ArrayList<Job>();
 	static int[] noc1 = {0, 1, 1, 1};

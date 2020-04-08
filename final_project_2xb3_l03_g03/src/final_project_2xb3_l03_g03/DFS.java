@@ -4,6 +4,9 @@
   *  
   *  Description: A class for DepthFirstSearch in a Graph
  */
+
+package final_project_2xb3_l03_g03;
+
 public class DFS {
 	private boolean[] marked;
 	private int count = 0;
