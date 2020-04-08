@@ -445,37 +445,7 @@ sortRegionS & Seq of Job & ~ & \\
 \item exception: None
 \end{itemize}
 
-\subsection*{Local Functions}
-
-\noindent exch: Seq of Job $\times$ $\mathbb{Z} \times \mathbb{Z}$  $ \rightarrow $ None\\
-\noindent $\mbox{exch}(a, i, j) \equiv$ exchange a[i] and a[j] in the array\\
-
-\noindent sortString: Seq of Job $\times$ $\mathbb{Z} \times \mathbb{Z}$ $ \rightarrow $ None\\
-\noindent $\mbox{sortString}(a, lo, hi) \equiv$ (hi $<=$ lo) $\Rightarrow$ return $|$ sortString(a, lo, j-1) \&\& sortString(a, j+1, hi) where j = partitionString(a, lo, hi)\\
-
-\noindent partitionString: Seq of Job $\times$ $\mathbb{Z} \times \mathbb{Z}$ $ \rightarrow $ None\\
-\noindent $\mbox{partitionString}(a, lo, hi) \equiv$ partition on array $a$ using ComapreString, see detail in code\\
-
-\noindent sortOutlook: Seq of Job $\times$ $\mathbb{Z} \times \mathbb{Z}$ $ \rightarrow $ None\\
-\noindent $\mbox{sortOutlook}(a, lo, hi) \equiv$ (hi $<=$ lo) $\Rightarrow$ return $|$ sortOutlook(a, lo, j-1) \&\& sortOutlook(a, j+1, hi) where j = partitionOutlook(a, lo, hi)\\
-
-\noindent partitionOutlook: Seq of Job $\times$ $\mathbb{Z} \times \mathbb{Z}$ $ \rightarrow $ None\\
-\noindent $\mbox{partitionOutlook}(a, lo, hi) \equiv$ partition on array $a$ using ComapreOutlook, see detail in code\\
-
-\noindent sortNOC: Seq of Job $\times$ $\mathbb{Z} \times \mathbb{Z}$ $ \rightarrow $ None\\
-\noindent $\mbox{sortNOC}(a, lo, hi) \equiv$ (hi $<=$ lo) $\Rightarrow$ return $|$ sortNOC(a, lo, j-1) \&\& sortNOC(a, j+1, hi) where j = partitionNOC(a, lo, hi)\\
-
-\noindent partitionNOC: Seq of Job $\times$ $\mathbb{Z} \times \mathbb{Z}$ $ \rightarrow $ None\\
-\noindent $\mbox{partitionNOC}(a, lo, hi) \equiv$ partition on array $a$ using ComapreNOC, see detail in code\\
-
-\noindent sortRegionS: Seq of Job $\times$ $\mathbb{Z} \times \mathbb{Z}$ $ \rightarrow $ None\\
-\noindent $\mbox{sortRegionS}(a, lo, hi) \equiv$ (hi $<=$ lo) $\Rightarrow$ return $|$ sortRegionS(a, lo, j-1) \&\& sortRegionS(a, j+1, hi) where j = partitionRegionS(a, lo, hi)\\
-
-\noindent partitionRegionS: Seq of Job $\times$ $\mathbb{Z} \times \mathbb{Z}$ $ \rightarrow $ None\\
-\noindent $\mbox{partitionRegionS}(a, lo, hi) \equiv$ partition on array $a$ using ComapreRegionS, see detail in code\\
-
 \newpage
-
 \section* {Graph Module}
 
 \subsection*{Module}
