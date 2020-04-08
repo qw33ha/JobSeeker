@@ -1,4 +1,13 @@
+/**
+  *  Author: Zihao Du
+  *  Revised: March 31, 2020
+  *  
+  *  Description: A class that exports the meanings of Noc code  
+ */
 package final_project_2xb3_l03_g03;
+/**
+ * @brief A class provides information about Noc code.
+ */
 public class NOC {
 	public static String[] Noc = {"Management occupations",
 								"Business, finance and administration occupations",
