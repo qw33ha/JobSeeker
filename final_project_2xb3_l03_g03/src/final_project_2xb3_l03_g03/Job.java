@@ -1,3 +1,9 @@
+/**
+  *  Author: Wang wenzhi
+  *  Revised: April 7, 2020
+  *  
+  *  Description: An abstract data type that represents job objects
+ */
 package final_project_2xb3_l03_g03;
 public class Job// DataType for a job title
 {
