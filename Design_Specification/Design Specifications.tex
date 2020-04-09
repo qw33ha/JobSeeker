@@ -57,8 +57,8 @@ SFWR ENG 2XB3, Software Engineering Practice and Experience:\\ Binding Theory to
 \begin{description}
 \item    Senni Tan --- Modules MIS; Description of implementation; View of uses relationship; Internal review.
 \item    Zihao Du--- Modules MIS; Description of implementation; Description of Modules; Internal review.
-\item    Wang Wenzhi --- Modules MIS; Description of implementation; Trace back to requirements; Internal review.
-\item    Gengyun Wang --- Modules MIS; Description of implementation and two UML for two most interesting classes; Internal review.
+\item    Wang Wenzhi --- Modules MIS; Description of implementation; implementation and two UML for two most interesting classes; Internal review.
+\item    Gengyun Wang --- Modules MIS; Description of implementation and trace back to requirements; Internal review.
 \end{description}
 \newpage
 
@@ -446,6 +446,68 @@ sortRegionS & Seq of Job & ~ & \\
 \end{itemize}
 
 \newpage
+
+\section* {Searching Module}
+\subsection*{Module}
+
+Searching
+
+\subsection* {Uses}
+
+Job
+
+\subsection* {Syntax}
+\subsubsection* {Exported Constants}
+
+None
+\subsubsection* {Exported Types}
+
+Searching = seq of Job
+
+\subsubsection* {Exported Access Programs}
+
+\begin{tabular}{| l | l | l | l |}
+\hline
+\textbf{Routine name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions}\\
+\hline
+LocationSearch & seq of Job, String & seq of Job & \\
+\hline
+NocSearch & seq of Job, $\mathbb{Z}$ & seq of Job & \\
+\hline
+\end{tabular}
+
+\subsection* {Semantics}
+
+\subsubsection* {State Variables}
+
+None
+
+\subsubsection* {State Invariant}
+
+None
+\subsubsection* {Assumptions}
+
+None
+
+\subsubsection* {Access Routine Semantics}
+
+\noindent LocationSearch($jobs$, $location$):
+\begin{itemize}
+\item output: $out := \langle e: Job | e \in jobs \wedge e.get\_regions() = location : e \rangle $ \textit{Return a sequence of all the elements from input location in the input sequence jobs}
+\item exception: None
+\end{itemize}
+\noindent \textit{// get\_regions() is a method from Job ADT class.}\\
+
+\noindent NocSearch($jobs$, $noc$):
+\begin{itemize}
+\item output: $out := \langle e: Job | e \in jobs \wedge e.get\_noc(0) = noc : e \rangle $ \textit{Return a sequence of all the elements with same input noc number in the input sequence jobs}
+\item exception: None
+\end{itemize}
+\noindent \textit{// get\_noc(int index) is a method from Job ADT class.}\\
+
+\newpage
+
+
 \section* {Graph Module}
 
 \subsection*{Module}
@@ -677,6 +739,29 @@ Comparable
 
 \noindent partitionRegionS: Seq of Job $\times$ $\mathbb{Z} \times \mathbb{Z}$ $ \rightarrow $ None\\
 \noindent $\mbox{partitionRegionS}(a, lo, hi) \equiv$ partition on array $a$ using ComapreRegionS, see detail in code\\
+
+\section* {Searching Module}
+\subsection*{Module}
+
+Searching
+
+\subsection* {Uses}
+
+Job
+
+\subsection*{Local Functions}
+
+\noindent Location\_Search: Seq of Job $\times$ String  $ \rightarrow $ $\mathbb{N}$\\
+\noindent $\text{Location\_Search}(jobs, location) \equiv (m: \mathbb{N} | m \in [0 .. |jobs|-1 \wedge jobs.get(m).get\_regions() = location]
+: m)$\\
+
+\noindent \textit{//The private Location\_Search method is based on binary searching algorithm. It will first create two int variables, $l = 0$ and $r = jobs.size()-1$. Then it will process a while loop : create a int variable $m = l + (r - l) \div 2$, then it will create another int variable $res = noc.compareTo(jobs.get(m).get\_noc(0))$. If $res = 0$, return m; if $res < 0$, then $r = m-1$, continue the loop; if $res > 0$, then $l = m + 1$, continue the loop.}\\
+
+\noindent noc\_Search: Seq of Job $\times$ $\mathbb{Z}$  $ \rightarrow $ $\mathbb{N}$\\
+\noindent $\text{noc\_Search}(jobs, noc) \equiv (m: \mathbb{N} | m \in [0 .. |jobs|-1] \wedge jobs.get(m).get\_noc(0) = noc
+: m)$\\
+
+\noindent \textit{//The private Location\_Search method is based on binary searching algorithm. It will first create two int variables, $l = 0$ and $r = jobs.size()-1$. Then it will process a while loop : create a int variable $m = l + (r - l) \div 2$, then it will create another int variable $res = location.compareTo(jobs.get(m).get\_regions())$. If $res = 0$, return m; if $res < 0$, then $r = m-1$, continue the loop; if $res > 0$, then $l = m + 1$, continue the loop.}\\
 
 \section{Internal review}
 
