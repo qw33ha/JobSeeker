@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2020.1.16)  8 APR 2020 18:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2020.1.16)  10 APR 2020 10:56
 entering extended mode
 **"./Design Specifications.tex"
 ("Design Specifications.tex"
@@ -348,7 +348,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 110--111
 
 LaTeX Warning: File `UML Diagram.png' not found on input line 112.
 
-<UML Diagram.png, id=58, 683.55376pt x 786.94pt>
+<UML Diagram.png, id=63, 683.55376pt x 786.94pt>
 File: UML Diagram.png Graphic file (type png)
 <use UML Diagram.png>
 Package pdftex.def Info: UML Diagram.png  used on input line 112.
@@ -396,90 +396,188 @@ Underfull \hbox (badness 10000) in paragraph at lines 388--389
 
  []
 
-[13] [14] [15] [16] [17]
-Overfull \hbox (79.56146pt too wide) in paragraph at lines 602--603
+[13] [14] [15]
+Underfull \hbox (badness 10000) in paragraph at lines 499--500
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 506--507
+
+ []
+
+[16] [17] [18] [19]
+Overfull \hbox (79.56146pt too wide) in paragraph at lines 664--665
 []\OT1/cmr/m/n/12 transition: $\OML/cmm/m/it/12 count; [] \OT1/cmr/m/n/12 := []
 \OML/cmm/m/it/12 ; []\U/msb/m/n/12 B[]$ 
  []
 
-[18]
-Underfull \hbox (badness 10000) in paragraph at lines 637--639
-
- []
-
-[19]
-Underfull \hbox (badness 10000) in paragraph at lines 654--656
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 657--659
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 660--662
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 663--665
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 666--668
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 669--671
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 672--674
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 675--677
-
- []
-
 [20]
-Underfull \hbox (badness 10000) in paragraph at lines 678--680
+<usesHierarchy.png, id=209, 963.6pt x 542.025pt>
+File: usesHierarchy.png Graphic file (type png)
+<use usesHierarchy.png>
+Package pdftex.def Info: usesHierarchy.png  used on input line 687.
+(pdftex.def)             Requested size: 481.79883pt x 271.01183pt.
+
+Overfull \hbox (26.55475pt too wide) in paragraph at lines 687--688
+ [] 
+ []
+
+<useCase.png, id=210, 963.6pt x 542.025pt>
+File: useCase.png Graphic file (type png)
+<use useCase.png>
+Package pdftex.def Info: useCase.png  used on input line 691.
+(pdftex.def)             Requested size: 481.79883pt x 271.01183pt.
+
+Overfull \hbox (26.55475pt too wide) in paragraph at lines 691--692
+ [] 
+ []
+
+[21 <./usesHierarchy.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 695--705
 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 684.
-[21]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 684.
+
+Underfull \hbox (badness 10000) in paragraph at lines 695--705
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 695--705
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 695--705
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 695--705
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 695--705
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 695--705
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 695--705
+
+ []
+
+[22 <./useCase.png>] [23]
+Underfull \hbox (badness 10000) in paragraph at lines 719--721
+
+ []
+
+[24]
+Underfull \hbox (badness 10000) in paragraph at lines 736--738
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 739--741
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 742--744
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 745--747
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 748--750
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 751--753
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 754--756
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 757--759
+
+ []
+
+[25]
+Underfull \hbox (badness 10000) in paragraph at lines 760--762
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 774--777
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 778--779
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 780--783
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 784--785
+
+ []
+
+
+Overfull \hbox (23.926pt too wide) in paragraph at lines 790--791
+\OT1/cmr/m/n/12 COMMONS, GNOME, 12 Jan. 2008, https://commons.wikimedia.org/wik
+i/File:Gnome-
+ []
+
+[26]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 794.
+ [27]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 794.
  ("Design Specifications.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 684.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 684.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 794.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 794.
 Package rerunfilecheck Info: File `"Design Specifications".out' has not changed
 .
-(rerunfilecheck)             Checksum: 88F9B7A389952BCCACE35CC4FBE2DBA9;367.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 684.
+(rerunfilecheck)             Checksum: EC7320CE4C2F8B2FAB6885B452E5426E;413.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 794.
  ) 
 Here is how much of TeX's memory you used:
- 6005 strings out of 492942
- 85433 string characters out of 3143473
+ 6042 strings out of 492942
+ 85875 string characters out of 3143473
  182820 words of memory out of 3000000
- 9744 multiletter control sequences out of 15000+200000
+ 9753 multiletter control sequences out of 15000+200000
  13810 words of font info for 52 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,8n,30p,1644b,389s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 28i,8n,30p,1644b,395s stack positions out of 5000i,500n,10000p,200000b,50000s
 <D:/MiKTex/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/MiKTex/fonts/type1/p
 ublic/amsfonts/cm/cmbxti10.pfb><D:/MiKTex/fonts/type1/public/amsfonts/cm/cmmi12
 .pfb><D:/MiKTex/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/MiKTex/fonts/type1
 /public/amsfonts/cm/cmr17.pfb><D:/MiKTex/fonts/type1/public/amsfonts/cm/cmsy10.
 pfb><D:/MiKTex/fonts/type1/public/amsfonts/cm/cmti12.pfb><D:/MiKTex/fonts/type1
 /public/amsfonts/symbols/msbm10.pfb>
-Output written on "Design Specifications.pdf" (21 pages, 180273 bytes).
+Output written on "Design Specifications.pdf" (27 pages, 286262 bytes).
 PDF statistics:
- 253 PDF objects out of 1000 (max. 8388607)
- 100 named destinations out of 1000 (max. 500000)
- 54 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 310 PDF objects out of 1000 (max. 8388607)
+ 125 named destinations out of 1000 (max. 500000)
+ 72 words of extra memory for PDF output out of 10000 (max. 10000000)
 
