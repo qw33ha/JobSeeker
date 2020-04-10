@@ -782,7 +782,12 @@ Job
 : m)$\\
 
 \noindent \textit{//The private Location\_Search method is based on binary searching algorithm. It will first create two int variables, $l = 0$ and $r = jobs.size()-1$. Then it will process a while loop : create a int variable $m = l + (r - l) \div 2$, then it will create another int variable $res = location.compareTo(jobs.get(m).get\_regions())$. If $res = 0$, return m; if $res < 0$, then $r = m-1$, continue the loop; if $res > 0$, then $l = m + 1$, continue the loop.}\\
-
+\begin{center}
+\noindent state machine diagram of DataProcess class
+\includegraphics[width=0.8\textwidth]{state machine 1.png}\\
+\noindent state machine diagram of DemoClient class
+\includegraphics[width=0.8\textwidth]{state machine 2.png}\\
+\end{center}
 \section{Internal review}
 
 
@@ -792,6 +797,7 @@ Job
 \item Sedgewick\ Robert,\ and\ Kevin\ Wayne.\ Algotithms,\ 4th Edition.
 \item Open\ Government\ Portal\ (2018, May 15).\ 3-year Employment Outlooks\ .\ Retrieved\ from
 https://open.canada.ca/data/en/dataset/b0e112e9-cf53-4e79-8838-23cd98debe5b
+\item https://app.creately.com/
 \end{itemize}
 
 \end {document}
