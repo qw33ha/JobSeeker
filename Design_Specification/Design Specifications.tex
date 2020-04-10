@@ -101,7 +101,7 @@ Name & Role(s) & Contribution & Comments \\
 \newpage
 
 \section*{Executive Summary}
-
+JobSeeker is designed for potential immigrants, people new to Canada that are looking for a job and Canadian job seeker. It will provide the user positions of jobs they are interested in and show the relative information. The project is composed by five main modules; a Job module which constructs the Job ADT; a Data Process module which processes data from datasets, converts them to Job objects, stores the objects and return; a Sorting module which sorts the Job objects arrays, with the help from the Comparable module; a Searching module which does the searching on Job objects with some given conditions; and a DFS module which finds the relative jobs for a given job source in the graph constructed by the Graph ADT. The prototype of this design will be presented in the Demo module. This document gives the detail of the project design in the sections below.
 
 \tableofcontents
 \newpage
@@ -784,11 +784,15 @@ Job
 \noindent \textit{//The private Location\_Search method is based on binary searching algorithm. It will first create two int variables, $l = 0$ and $r = jobs.size()-1$. Then it will process a while loop : create a int variable $m = l + (r - l) \div 2$, then it will create another int variable $res = location.compareTo(jobs.get(m).get\_regions())$. If $res = 0$, return m; if $res < 0$, then $r = m-1$, continue the loop; if $res > 0$, then $l = m + 1$, continue the loop.}\\
 
 \section{Internal review}
+\subsection*{Advantages}
+\subsection*{Di}
 
 \section{References}
 \begin{itemize}
 \item GNOME\ Project.\ “An\ Icon\ from\ the\ GNOME-Icon-Theme.”\ WEKIMEDIA\\ COMMONS,\ GNOME,\ 12\ Jan.\ 2008, https://commons.wikimedia.org/wiki/File:Gnome-computer.svg.
 \item Sedgewick\ Robert,\ and\ Kevin\ Wayne.\ Algotithms,\ 4th Edition.
+\item Open\ Government\ Portal\ (2018, May 15).\ 3-year Employment Outlooks\ .\ Retrieved\ from
+https://open.canada.ca/data/en/dataset/b0e112e9-cf53-4e79-8838-23cd98debe5b
 \end{itemize}
 
 \end {document}
