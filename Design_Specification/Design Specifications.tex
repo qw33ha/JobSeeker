@@ -102,7 +102,7 @@ Name & Role(s) & Contribution & Comments \\
 
 \section*{Executive Summary}
 JobSeeker is designed for potential immigrants, people new to Canada that are looking for a job and Canadian job seeker. It will provide the user positions of jobs they are interested in and show the relative information. The project is composed by five main modules; a Job module which constructs the Job ADT; a Data Process module which processes data from datasets, converts them to Job objects, stores the objects and return; a Sorting module which sorts the Job objects arrays, with the help from the Comparable module; a Searching module which does the searching on Job objects with some given conditions; and a DFS module which finds the relative jobs for a given job source in the graph constructed by the Graph ADT. The prototype of this design will be presented in the Demo module. This document gives the detail of the project design in the sections below.
-
+\newpage
 \tableofcontents
 \newpage
 
@@ -690,6 +690,7 @@ Graph($g$, $s$):
 \begin{center}
 \includegraphics[scale = 0.5]{useCase.png}
 \end{center}
+\newpage
 \section{Trace back to requirements}
 
 Demo Module (User Interface) :  This module is used to do data processing operation which uses methods from DataProcess Module to read data from database files, and store data as expected type (Job ADT). Then it will give users instructions to use methods from other modules to sort, search, and create graph for the expected data. Demo Module satisfies the I/O requirements and User Interface requirements addressed in functional requirements. If users give unavailable inputs during using, the wrong inputs will not be taken and error messages will be displayed. So it also supports the robustness, usability, and understandability addressed in non-functional requirements.\\\newline 
@@ -702,7 +703,7 @@ Searching Module: This module is used to search the expected Job set based on th
 Graph Module: This module is an ADT class used to create an undirected graph. Because the programmer provided detailed comments, thus the code is easy to understand and modify. So Job Module supports the understandability and maintainability addressed in non-functional requirements.\\\newline
 DFS Module: This module is used detect the reachable vertices from a source graph and source vertex by depth-first search. The algorithm satisfies the the performance requirements. Like above modules, the code of this module has clear comments and Junit tests to ensure the understandability and accuracy.\\\newline
 Overall: The product satisfies all the functional requirements. By the description above, the product also supports the reliability, robustness, performance, usability, maintainability, understandability, and accuracy. Besides, all the codes are implemented by Java, therefore the product can run on OS such as Windows, Mac OS, and Linux. Thus the portability is also supported.
-
+\newpage
 \section{Description of implementation}
 \section* {DFS Module}
 
@@ -760,6 +761,7 @@ Comparable
 \noindent partitionRegionS: Seq of Job $\times$ $\mathbb{Z} \times \mathbb{Z}$ $ \rightarrow $ None\\
 \noindent $\mbox{partitionRegionS}(a, lo, hi) \equiv$ partition on array $a$ using ComapreRegionS, see detail in code\\
 
+\newpage
 \section* {Searching Module}
 \subsection*{Module}
 
@@ -782,6 +784,7 @@ Job
 : m)$\\
 
 \noindent \textit{//The private Location\_Search method is based on binary searching algorithm. It will first create two int variables, $l = 0$ and $r = jobs.size()-1$. Then it will process a while loop : create a int variable $m = l + (r - l) \div 2$, then it will create another int variable $res = location.compareTo(jobs.get(m).get\_regions())$. If $res = 0$, return m; if $res < 0$, then $r = m-1$, continue the loop; if $res > 0$, then $l = m + 1$, continue the loop.}\\
+\newpage
 \begin{center}
 \noindent state machine diagram of DataProcess class
 \includegraphics[width=0.8\textwidth]{state machine 1.png}\\
@@ -791,15 +794,16 @@ Job
 \section{Internal review}
 \begin{itemize}
 \item JobSeeker is designed to provide information about different kinds of jobs in different regions in recent years for those who are seeking for jobs or investigate the job market. The design is robust and always has a exception class for different illegal inputs. But the user interface is not very user-friendly. It's better to use MVC model here. For the implementaion part, sorting and searching functions are implemented by static functions instead of creating new objects. This reduces the dependency between modules. We put to many methods which we should have separated into different classes in the Demo class like addedge() and read input, which violates the principle of modularity and information hiding. A possible future improvement: allow the user type the region he/she is interested in and find the nearsest region in the dataset using Geocoding API instead of choosing from regions the dataset has.
+\item The modules provide concrete methods in implementation and performance for this design. Due to some practical reason, in some modules' implementation of the prototype we do not use the fastest algorithm, such as the binary search algorithm in the searching module; we will leave that for further improvement and maintainance. In the prototype of the design, once the user select a perticular job, the relative jobs will be presented; however, refer to our original plan, there should be a brief description about the job; we couldn't collect information for each job in such a large database in limit amount of time. Thus we will leave that for further improvement as well.
 \end{itemize}
-
+\newpage
 \section{References}
 \begin{itemize}
 \item GNOME\ Project.\ “An\ Icon\ from\ the\ GNOME-Icon-Theme.”\ WEKIMEDIA\\ COMMONS,\ GNOME,\ 12\ Jan.\ 2008, https://commons.wikimedia.org/wiki/File:Gnome-computer.svg.
 \item Sedgewick\ Robert,\ and\ Kevin\ Wayne.\ Algotithms,\ 4th Edition.
 \item Open\ Government\ Portal\ (2018, May 15).\ 3-year Employment Outlooks\ .\ Retrieved\ from
 https://open.canada.ca/data/en/dataset/b0e112e9-cf53-4e79-8838-23cd98debe5b
-\item https://app.creately.com/
+\item Online\ Diagram\ Editor,\ Retrieved\ from\ https://app.creately.com/
 \end{itemize}
 
 \end {document}
