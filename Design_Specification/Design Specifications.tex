@@ -789,7 +789,9 @@ Job
 \includegraphics[width=0.8\textwidth]{state machine 2.png}\\
 \end{center}
 \section{Internal review}
-
+\begin{itemize}
+\item JobSeeker is designed to provide information about different kinds of jobs in different regions in recent years for those who are seeking for jobs or investigate the job market. The design is robust and always has a exception class for different illegal inputs. But the user interface is not very user-friendly. It's better to use MVC model here. For the implementaion part, sorting and searching functions are implemented by static functions instead of creating new objects. This reduces the dependency between modules. We put to many methods which we should have separated into different classes in the Demo class like addedge() and read input, which violates the principle of modularity and information hiding. A possible future improvement: allow the user type the region he/she is interested in and find the nearsest region in the dataset using Geocoding API instead of choosing from regions the dataset has.
+\end{itemize}
 
 \section{References}
 \begin{itemize}

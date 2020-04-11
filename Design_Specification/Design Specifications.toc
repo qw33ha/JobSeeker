@@ -1,7 +1,7 @@
-\contentsline {section}{\numberline {1}Description of Modules}{5}{section.1}%
-\contentsline {section}{\numberline {2}Detailed description of interfaces}{7}{section.2}%
-\contentsline {section}{\numberline {3}View of uses relationship}{21}{section.3}%
-\contentsline {section}{\numberline {4}Trace back to requirements}{22}{section.4}%
-\contentsline {section}{\numberline {5}Description of implementation}{24}{section.5}%
-\contentsline {section}{\numberline {6}Internal review}{28}{section.6}%
-\contentsline {section}{\numberline {7}References}{28}{section.7}%
+\contentsline {section}{\numberline {1}Description of Modules}{5}{section.1}
+\contentsline {section}{\numberline {2}Detailed description of interfaces}{7}{section.2}
+\contentsline {section}{\numberline {3}View of uses relationship}{21}{section.3}
+\contentsline {section}{\numberline {4}Trace back to requirements}{22}{section.4}
+\contentsline {section}{\numberline {5}Description of implementation}{24}{section.5}
+\contentsline {section}{\numberline {6}Internal review}{28}{section.6}
+\contentsline {section}{\numberline {7}References}{28}{section.7}
